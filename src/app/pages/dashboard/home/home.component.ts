@@ -6,6 +6,7 @@ import {
 } from 'src/app/models/FinancialRecord';
 import { FinancialRecordService } from 'src/app/services/financial-record/financial-record.service';
 import { format } from 'date-fns';
+import { AlertService } from 'src/app/services/alert/alert.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private financialRecordService: FinancialRecordService
+    private financialRecordService: FinancialRecordService,
+    private alertService: AlertService
   ) {
     this.getFinancialRecords();
   }
@@ -69,5 +71,24 @@ export class HomeComponent implements OnInit {
   exit() {
     localStorage.removeItem('mywallet-token');
     this.router.navigate(['']);
+  }
+
+  deleteRecord(id: string) {
+    const confirm = window.confirm('Deseja excluir registro?');
+
+    if (confirm) {
+      this.financialRecordService.deleteFinancialRecord(id).subscribe({
+        next: () => {
+          this.getFinancialRecords();
+        },
+        error: (error) => {
+          this.alertService.error('Erro na requisição!');
+        },
+      });
+    }
+  }
+
+  goToEditRecord(record: FinancialRecordFormated) {
+    this.router.navigate(['/dashboard/editar'], { state: { record } });
   }
 }

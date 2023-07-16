@@ -12,8 +12,9 @@
       <ng-container *ngIf="financialRecords.length > 0; else noRecordsMessage">
         <div *ngFor="let record of financialRecordFormated" class="record">
           <p class="date">{{ record.createdAt }}</p>
-          <p class="description">{{ record.description }}</p>
+          <p class="description" (click)="goToEditRecord(record)">{{ record.description }}</p>
           <p class="value" [ngClass]="{ 'income': record.category === 'INCOME', 'expense': record.category === 'EXPENSE' }">R$ {{ record.value }}</p>
+          <p class="delete" (click)="deleteRecord(record.id)">X</p>
         </div>
       </ng-container>
     </div>
