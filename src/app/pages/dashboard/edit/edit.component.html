@@ -1,0 +1,38 @@
+<div class="record-page-container">
+  <div class="header">
+    <h1 class="record-title">Editar Registro</h1>
+    <div class="close" (click)="navigateToHome()">
+      <mat-icon>home</mat-icon>
+    </div>
+  </div>
+  <div class="form-container">
+    <label class="label-form" for="value">Valor:</label>
+    <input
+      [(ngModel)]="requestRecord.value"
+      id="value"
+      type="text"
+      placeholder="R$ 0,00"
+      autocomplete="off"
+      required
+      (input)="convertValue($event)"
+      class="input-form"
+    />
+    <label class="label-form" for="description">Descrição:</label>
+    <input
+      [(ngModel)]="requestRecord.description"
+      id="description"
+      type="text"
+      placeholder="Descrição"
+      autocomplete="off"
+      required
+      class="input-form"
+    />
+      <button
+      type="submit"
+      class="button-form"
+      (click)="putRecord()"
+      >
+        Salvar
+      </button>
+    </div>
+</div>

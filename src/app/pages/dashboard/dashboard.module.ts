@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     DashboardComponent,
     IncomeComponent,
     ExpenseComponent,
-    HomeComponent
+    HomeComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,

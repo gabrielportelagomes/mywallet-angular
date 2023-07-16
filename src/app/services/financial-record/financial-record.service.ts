@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api/api.service';
-import { RequestFinancialRecord } from 'src/app/models/RequestFinancialRecord';
+import { RequestFinancialRecord, RequestUpdateFinancialRecord } from 'src/app/models/RequestFinancialRecord';
 import { Observable } from 'rxjs';
 import { FinancialRecord } from 'src/app/models/FinancialRecord';
 
@@ -23,6 +23,21 @@ export class FinancialRecordService {
   getFinancialRecords(): Observable<FinancialRecord[]> {
     return this.httpClient.get<FinancialRecord[]>(
       this.apiService.getBaseUrl().concat('/records'),
+      { headers: this.apiService.getHeadersWithToken() }
+    );
+  }
+
+  deleteFinancialRecord(id: string): Observable<any> {
+    return this.httpClient.delete(
+      this.apiService.getBaseUrl().concat(`/records/${id}`),
+      { headers: this.apiService.getHeadersWithToken() }
+    );
+  }
+
+  putFinancialRecord(requestFinancialRecord: RequestUpdateFinancialRecord, id: string): Observable<any> {
+    return this.httpClient.put(
+      this.apiService.getBaseUrl().concat(`/records/${id}`),
+      requestFinancialRecord,
       { headers: this.apiService.getHeadersWithToken() }
     );
   }

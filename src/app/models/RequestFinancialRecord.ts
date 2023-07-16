@@ -3,3 +3,8 @@ export interface RequestFinancialRecord {
   description: string;
   category: string;
 }
+
+export interface RequestUpdateFinancialRecord {
+  value: number | string;
+  description: string;
+}
