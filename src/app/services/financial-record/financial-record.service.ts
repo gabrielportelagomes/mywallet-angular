@@ -11,7 +11,7 @@ export class FinancialRecordService {
 
   constructor(private httpClient: HttpClient, private apiService: ApiService) {}
 
-  postIncome(requestFinancialRecord: RequestFinancialRecord): Observable<any> {
+  postFinancialRecord(requestFinancialRecord: RequestFinancialRecord): Observable<any> {
     return this.httpClient.post(
       this.apiService.getBaseUrl().concat('/records'),
       requestFinancialRecord,

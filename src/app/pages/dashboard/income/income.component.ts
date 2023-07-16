@@ -36,7 +36,7 @@ export class IncomeComponent {
         parseInt(this.requestIncome.value.replace(/[^\d]+/g, '')) / 100;
     }
 
-    this.financialRecordService.postIncome(this.requestIncome).subscribe({
+    this.financialRecordService.postFinancialRecord(this.requestIncome).subscribe({
       next: (data) => {
         this.router.navigate(['dashboard/home']);
       },
