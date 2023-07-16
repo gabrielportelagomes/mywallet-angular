@@ -16,10 +16,12 @@
           <p class="value" [ngClass]="{ 'income': record.category === 'INCOME', 'expense': record.category === 'EXPENSE' }">R$ {{ record.value }}</p>
         </div>
       </ng-container>
-      <ng-template #noRecordsMessage>
-        <p>Não há registros financeiros.</p>
-      </ng-template>
     </div>
+    <ng-template #noRecordsMessage>
+      <div class="empty-records">
+        <p>Não há registros financeiros.</p>
+      </div>
+    </ng-template>
     <ng-container *ngIf="financialRecords.length > 0">
       <div class="total">
         <p [ngClass]="{ 'income': total >= 0, 'expense': total < 0 }">R$ {{ totalFormated }}</p>
