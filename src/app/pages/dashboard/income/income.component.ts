@@ -33,7 +33,7 @@ export class IncomeComponent {
   postIncome() {
     if (typeof this.requestIncome.value === 'string') {
       this.requestIncome.value =
-        parseInt(this.requestIncome.value.replace(/[^\d]+/g, '')) / 100;
+        parseInt(this.requestIncome.value.replace(/[^\d]+/g, ''));
     }
 
     this.financialRecordService.postFinancialRecord(this.requestIncome).subscribe({
