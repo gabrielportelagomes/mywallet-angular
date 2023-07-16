@@ -76,7 +76,7 @@ table {
     color: #000000;
   }
   .button-form {
-    width: 150px;
+    width: 170px;
     height: 46px;
     display: flex;
     justify-content: center;
@@ -109,3 +109,6 @@ table {
     text-decoration: underline;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
