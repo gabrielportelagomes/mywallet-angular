@@ -1,0 +1,33 @@
+<div class="page-container">
+  <h1 class="logo">MyWallet</h1>
+  <div class="form-container">
+    <label class="label-form" for="email">Email:</label>
+    <input
+      [(ngModel)]="requestLogin.email"
+      id="email"
+      type="email"
+      placeholder="E-mail"
+      autocomplete="off"
+      required
+      class="input-form"
+    />
+    <label class="label-form" for="password">Senha:</label>
+    <input
+      [(ngModel)]="requestLogin.password"
+      id="password"
+      type="password"
+      placeholder="Senha"
+      autocomplete="off"
+      required
+      class="input-form"
+    />
+      <button
+      type="submit"
+      class="button-form"
+      (click)="login()"
+      >
+        Entrar
+      </button>
+    </div>
+    <p (click)="navigateToSignUp()" class="link">Primeira vez? Cadastre-se!</p>
+</div>
