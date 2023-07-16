@@ -7,6 +7,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -14,7 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     DashboardComponent,
     IncomeComponent,
-    ExpenseComponent
+    ExpenseComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

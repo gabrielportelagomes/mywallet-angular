@@ -1,1 +1,38 @@
-<p>home works!</p>
+<div class="home-page-container">
+  <div class="header">
+    <div class="title">
+      <h1>Olá, bem-vindo!</h1>
+    </div>
+    <div class="exit" (click)="exit()">
+      <mat-icon>exit_to_app</mat-icon>
+    </div>
+  </div>
+  <div class="dashboard">
+    <div class="records">
+      <ng-container *ngIf="financialRecords.length > 0; else noRecordsMessage">
+        <div *ngFor="let record of financialRecordFormated" class="record">
+          <p class="date">{{ record.createdAt }}</p>
+          <p class="description">{{ record.description }}</p>
+          <p class="value" [ngClass]="{ 'income': record.category === 'INCOME', 'expense': record.category === 'EXPENSE' }">R$ {{ record.value }}</p>
+        </div>
+      </ng-container>
+      <ng-template #noRecordsMessage>
+        <p>Não há registros financeiros.</p>
+      </ng-template>
+    </div>
+    <ng-container *ngIf="financialRecords.length > 0">
+      <div class="total">
+        <p [ngClass]="{ 'income': total >= 0, 'expense': total < 0 }">R$ {{ totalFormated }}</p>
+      </div>
+    </ng-container>
+  </div>
+  <div class="options">
+    <button class="option-button" (click)="goToIncome()">
+      <p>Nova entrada</p>
+    </button>
+    <button class="option-button" (click)="goToExpense()">
+      <p>Nova saída</p>
+    </button>
+  </div>
+</div>
+

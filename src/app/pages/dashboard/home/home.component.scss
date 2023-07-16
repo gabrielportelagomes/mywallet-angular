@@ -1,0 +1,133 @@
+.home-page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+.header {
+  width: 326px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  display: flex;
+  align-items: center;
+  h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #ffffff;
+    margin: 0;
+  }
+}
+.exit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.dashboard {
+  width: 326px;
+  height: 446px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-top: 26px;
+  position: relative;
+  padding: 20px 0;
+}
+.records {
+  overflow-y: auto;
+  margin-bottom: 30px;
+}
+.records::-webkit-scrollbar {
+  width: 0.5em;
+}
+.records::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.records::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.record {
+  display: flex;
+  margin-bottom: 20px;
+  p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    word-wrap: break-word;
+  }
+}
+.date {
+  width: 48px;
+  color: #c6c6c6;
+}
+.description {
+  margin-left: 5px;
+  width: 130px;
+  text-align: left;
+  color: #000000;
+  cursor: pointer;
+}
+.value {
+  margin-left: 5px;
+  width: 90px;
+  text-align: end;
+}
+.income {
+  color: green;
+}
+.expense {
+  color: red;
+}
+.total {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+  }
+}
+.options {
+  width: 326px;
+  height: 114px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 13px;
+}
+.option-button {
+  width: 155px;
+  height: 114px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  border-radius: 5px;
+  background-color: #a328d6;
+  cursor: pointer;
+  p {
+    width: 64px;
+    margin: 10px;
+    text-align: left;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #ffffff;
+  }
+}
