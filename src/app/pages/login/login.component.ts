@@ -26,7 +26,7 @@ export class LoginComponent {
     this.authService.login(this.requestLogin).subscribe({
       next: (data) => {
         localStorage.setItem('mywallet-token', JSON.stringify(data.token));
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/home']);
       },
       error: (error) => {
         if (error.status === 403) {
